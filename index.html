@@ -1,0 +1,776 @@
+
+html_code = '''<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VIGILANT | High-End Security & Surveillance</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#004b71",
+                    "secondary-container": "#e2e2e2",
+                    "surface-container-high": "#e8e8e8",
+                    "surface-container-low": "#f3f3f3",
+                    "surface": "#f9f9f9",
+                    "on-secondary-fixed": "#1b1b1b",
+                    "on-tertiary-fixed": "#001e30",
+                    "surface-container-highest": "#e2e2e2",
+                    "on-error-container": "#93000a",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#8fcdff",
+                    "on-secondary-fixed-variant": "#474747",
+                    "inverse-primary": "#ffb4ac",
+                    "primary-fixed": "#ffdad6",
+                    "on-secondary": "#ffffff",
+                    "surface-variant": "#e2e2e2",
+                    "on-surface-variant": "#5a403e",
+                    "on-primary": "#ffffff",
+                    "on-primary-fixed-variant": "#92030f",
+                    "on-tertiary-container": "#b1daff",
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#ffc8c2",
+                    "inverse-on-surface": "#f1f1f1",
+                    "secondary": "#5e5e5e",
+                    "surface-container": "#eeeeee",
+                    "inverse-surface": "#2f3131",
+                    "on-secondary-container": "#646464",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#00496e",
+                    "surface-bright": "#f9f9f9",
+                    "surface-dim": "#dadada",
+                    "error": "#ba1a1a",
+                    "on-surface": "#1a1c1c",
+                    "tertiary-fixed": "#cbe6ff",
+                    "primary-container": "#b22222",
+                    "outline": "#8e706d",
+                    "background": "#f9f9f9",
+                    "tertiary-container": "#006292",
+                    "primary-fixed-dim": "#ffb4ac",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#b52424",
+                    "on-background": "#1a1c1c",
+                    "on-primary-fixed": "#410003",
+                    "secondary-fixed-dim": "#c6c6c6",
+                    "secondary-fixed": "#e2e2e2",
+                    "outline-variant": "#e2beba",
+                    "primary": "#8f000d"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Space Grotesk"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-nav {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #8f000d 0%, #b22222 100%);
+        }
+        .tonal-lift {
+            box-shadow: 0px 20px 40px rgba(26, 28, 28, 0.04);
+        }
+        /* Modal Animation */
+        .modal-enter {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        .modal-enter-active {
+            opacity: 1;
+            transform: scale(1);
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+        .modal-exit {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .modal-exit-active {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.2s ease-in, transform 0.2s ease-in;
+        }
+        /* Mobile Menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Prevent body scroll when modal is open */
+        body.modal-open {
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary selection:text-white">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-white/80 dark:bg-zinc-950/80 backdrop-blur-xl shadow-sm h-20 flex items-center transition-all duration-300">
+<div class="flex justify-between items-center max-w-7xl mx-auto px-4 sm:px-6 w-full">
+<div class="text-xl sm:text-2xl font-black tracking-tighter text-red-700 dark:text-red-600 font-headline">VIGILANT</div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center space-x-8 font-headline font-bold tracking-tight">
+<a class="text-red-700 dark:text-red-500 border-b-2 border-red-700 pb-1" href="#home">Home</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-red-700 transition-colors duration-300" href="#services">Services</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-red-700 transition-colors duration-300" href="#process">Process</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-red-700 transition-colors duration-300" href="#reviews">Reviews</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-red-700 transition-colors duration-300" href="#insights">Insights</a>
+<a class="text-zinc-600 dark:text-zinc-400 hover:text-red-700 transition-colors duration-300" href="#contact">Contact</a>
+</div>
+<div class="flex items-center gap-2 sm:gap-4">
+<button onclick="openQuoteModal()" class="primary-gradient text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full font-headline font-bold tracking-tight text-sm sm:text-base scale-95 active:scale-100 transition-transform">
+                    Secure Now
+                </button>
+<!-- Mobile Menu Button -->
+<button onclick="toggleMobileMenu()" class="md:hidden p-2 text-zinc-700 dark:text-zinc-300">
+                    <span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
+                </button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="mobile-menu fixed top-20 right-0 w-full h-[calc(100vh-5rem)] bg-white dark:bg-zinc-950 z-40 md:hidden shadow-2xl">
+<div class="flex flex-col p-6 space-y-6 font-headline font-bold text-lg">
+<a onclick="closeMobileMenu()" class="text-red-700 dark:text-red-500 border-b-2 border-red-700 pb-2" href="#home">Home</a>
+<a onclick="closeMobileMenu()" class="text-zinc-600 dark:text-zinc-400 hover:text-red-700 transition-colors duration-300 border-b border-zinc-200 pb-2" href="#services">Services</a>
+<a onclick="closeMobileMenu()" class="text-zinc-600 dark:text-zinc-400 hover:text-red-700 transition-colors duration-300 border-b border-zinc-200 pb-2" href="#process">Process</a>
+<a onclick="closeMobileMenu()" class="text-zinc-600 dark:text-zinc-400 hover:text-red-700 transition-colors duration-300 border-b border-zinc-200 pb-2" href="#reviews">Reviews</a>
+<a onclick="closeMobileMenu()" class="text-zinc-600 dark:text-zinc-400 hover:text-red-700 transition-colors duration-300 border-b border-zinc-200 pb-2" href="#insights">Insights</a>
+<a onclick="closeMobileMenu()" class="text-zinc-600 dark:text-zinc-400 hover:text-red-700 transition-colors duration-300 border-b border-zinc-200 pb-2" href="#contact">Contact</a>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-surface" id="home">
+<div class="absolute inset-0 z-0 opacity-40">
+<img class="w-full h-full object-cover" alt="Sleek modern 4K security camera mounted on a clean architectural concrete wall with professional lighting, representing high-end surveillance technology" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwV6s-QZoqi82_D1R2V37p_XfIZAWl91FvmUJ5WAkHXj7OV1tMVDw-CAY-0v0YL_Yh8YuVtq4eJd16kNHuirrc3DF9_XyyAbxPLMcYzyz33JjZ_F89sxsBF4BnZvL69zCVYc3JARk0poZ2Zsews5vrrWrEtnODSonJOyZAGeWulVXpeqUHCHznuxthXwIDU6C8xNbkwoBFUIYnj-7v8m8skekCKwAQxwvYUXRbkXtoFBAElI0ZyhctNIJbVi6mxJ--LNeEYZe1RfwA"/>
+<div class="absolute inset-0 bg-gradient-to-r from-surface via-surface/70 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+<div class="lg:col-span-8 text-center lg:text-left">
+<span class="inline-block px-3 sm:px-4 py-1 rounded-full bg-primary/10 text-primary font-headline font-bold text-xs sm:text-sm mb-4 sm:mb-6 tracking-widest uppercase">Elite Protection Systems</span>
+<h1 class="font-headline text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-on-surface leading-[1.1] tracking-tighter mb-6 sm:mb-8">
+                    Reliable Security Solutions for Your <span class="text-primary">Home & Business</span>
+</h1>
+<p class="text-base sm:text-lg md:text-xl text-secondary max-w-2xl mx-auto lg:mx-0 mb-8 sm:mb-10 leading-relaxed font-light px-4 sm:px-0">
+                    We architect invisible safety nets. From military-grade perimeter fencing to AI-driven surveillance, VIGILANT ensures your premises are impenetrable without compromising aesthetic integrity.
+                </p>
+<div class="flex flex-col sm:flex-row flex-wrap gap-4 justify-center lg:justify-start">
+<button onclick="openQuoteModal()" class="primary-gradient text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-headline font-bold text-base sm:text-lg hover:shadow-xl transition-all">Get a Quote</button>
+<a href="https://wa.me/2348023384523" target="_blank" class="bg-surface-container-highest text-on-surface px-6 sm:px-8 py-3 sm:py-4 rounded-full font-headline font-bold text-base sm:text-lg hover:bg-surface-container-high transition-all text-center">Contact Us</a>
+</div>
+</div>
+</div>
+</section>
+<!-- About Us -->
+<section class="py-16 sm:py-24 bg-surface-container-low">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+<div class="relative order-2 lg:order-1">
+<div class="aspect-square rounded-2xl overflow-hidden shadow-2xl">
+<img class="w-full h-full object-cover" alt="professional security technician installing high-tech surveillance equipment in a clean modern office setting with natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWuhAODlS_97wbZNmI-7q-_nv-t04ZdewcZ-th9ozJRkM3nOaX8RIM4T98Qp8V3a22ZjQVv5ne1dfHjbkQhy_Wl20lr4THSDnIcNLRiRYx4uSJdHkG_OvRMoSm_5eUalOz_a-xv2tk-DDmGgASsY-CceUPFDOXRs8AH2uRqerz7nuJZLNSgkrAzcehi-xCwdkWK1Yr-AFx-mFrfZohRgGPrvbSXEfwiRJ5lygVpc41d36zOQGNTJ7DnEVz-5ClWnif4WdQUxU7kNMP"/>
+</div>
+<div class="absolute -bottom-4 sm:-bottom-6 -right-2 sm:-right-6 bg-white p-4 sm:p-8 rounded-2xl shadow-xl">
+<div class="text-2xl sm:text-4xl font-black text-primary font-headline">15+</div>
+<div class="text-xs sm:text-sm font-headline font-bold text-secondary uppercase tracking-widest">Years Experience</div>
+</div>
+</div>
+<div class="order-1 lg:order-2">
+<h2 class="font-headline text-3xl sm:text-4xl font-black mb-4 sm:mb-6 tracking-tight">An Architectural Approach to <span class="text-primary">Global Security.</span></h2>
+<p class="text-base sm:text-lg text-secondary mb-6 sm:mb-8 leading-relaxed">
+                        At VIGILANT, we don't just install hardware; we design ecosystems of safety. Our team consists of security architects and engineers who believe that true power lies in precision. We integrate power backup solutions with advanced surveillance to ensure you are never left in the dark.
+                    </p>
+<div class="grid grid-cols-2 gap-4 sm:gap-6">
+<div class="flex items-start gap-2 sm:gap-3">
+<span class="material-symbols-outlined text-primary text-xl sm:text-2xl" data-icon="verified_user"></span>
+<span class="font-headline font-bold text-sm sm:text-base">Certified Techs</span>
+</div>
+<div class="flex items-start gap-2 sm:gap-3">
+<span class="material-symbols-outlined text-primary text-xl sm:text-2xl" data-icon="shutter_speed"></span>
+<span class="font-headline font-bold text-sm sm:text-base">24/7 Monitoring</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us - Bento Grid -->
+<section class="py-16 sm:py-24 bg-surface">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="text-center mb-12 sm:mb-16">
+<h2 class="font-headline text-3xl sm:text-4xl font-black tracking-tight mb-4">Engineered for Excellence</h2>
+<p class="text-secondary px-4">Why discerning clients choose VIGILANT for their most critical assets.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest p-6 sm:p-8 rounded-2xl tonal-lift md:col-span-2">
+<div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+<span class="material-symbols-outlined text-primary text-xl sm:text-2xl" data-icon="groups"></span>
+</div>
+<h3 class="font-headline text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Trusted Team</h3>
+<p class="text-secondary leading-relaxed text-sm sm:text-base">Our personnel undergo rigorous background checks and continuous technical training to ensure every installation meets the VIGILANT standard of excellence.</p>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest p-6 sm:p-8 rounded-2xl tonal-lift">
+<div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+<span class="material-symbols-outlined text-primary text-xl sm:text-2xl" data-icon="payments"></span>
+</div>
+<h3 class="font-headline text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Affordable Pricing</h3>
+<p class="text-secondary leading-relaxed text-sm sm:text-base">Premium security shouldn't be prohibitive. We offer scalable packages tailored to your budget.</p>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest p-6 sm:p-8 rounded-2xl tonal-lift">
+<div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+<span class="material-symbols-outlined text-primary text-xl sm:text-2xl" data-icon="high_quality"></span>
+</div>
+<h3 class="font-headline text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Quality Equipment</h3>
+<p class="text-secondary leading-relaxed text-sm sm:text-base">We source exclusively from top-tier global manufacturers for durability and clarity.</p>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-lowest p-6 sm:p-8 rounded-2xl tonal-lift md:col-span-2">
+<div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+<span class="material-symbols-outlined text-primary text-xl sm:text-2xl" data-icon="bolt"></span>
+</div>
+<h3 class="font-headline text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Fast Installation & Support</h3>
+<p class="text-secondary leading-relaxed text-sm sm:text-base">Our rapid deployment teams ensure your site is secure within 48 hours of inspection. Ongoing 24/7 technical support comes standard with every project.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="py-16 sm:py-24 bg-surface-container-low" id="services">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 sm:mb-16 gap-4 sm:gap-6">
+<div class="max-w-2xl">
+<h2 class="font-headline text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-4 sm:mb-6">Our Specializations</h2>
+<p class="text-secondary text-base sm:text-lg">A comprehensive suite of security and power infrastructure designed to work in perfect harmony.</p>
+</div>
+<div class="hidden md:block h-px bg-outline-variant flex-grow mx-12 mb-4 opacity-30"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+<!-- Service 1 -->
+<div class="group bg-surface-container-lowest p-6 sm:p-10 rounded-2xl transition-all hover:-translate-y-2 border border-transparent hover:border-primary/10">
+<div class="mb-6 sm:mb-8 text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl sm:!text-5xl" data-icon="grid_view"></span>
+</div>
+<h3 class="font-headline text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Electric Fence Wire</h3>
+<p class="text-secondary mb-4 sm:mb-6 text-sm sm:text-base">High-voltage non-lethal perimeter defense systems with immediate intrusion alerts.</p>
+<a href="https://wa.me/2348023384523?text=I'm%20interested%20in%20Electric%20Fence%20Wire%20installation" target="_blank" class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all text-sm sm:text-base">Get Quote <span class="material-symbols-outlined" data-icon="arrow_forward"></span></a>
+</div>
+<!-- Service 2 -->
+<div class="group bg-surface-container-lowest p-6 sm:p-10 rounded-2xl transition-all hover:-translate-y-2 border border-transparent hover:border-primary/10">
+<div class="mb-6 sm:mb-8 text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl sm:!text-5xl" data-icon="vaping_rooms"></span>
+</div>
+<h3 class="font-headline text-xl sm:text-2xl font-bold mb-3 sm:mb-4">American Fence Wire</h3>
+<p class="text-secondary mb-4 sm:mb-6 text-sm sm:text-base">Heavy-duty galvanized razor wire and structural mesh for maximum physical deterrence.</p>
+<a href="https://wa.me/2348023384523?text=I'm%20interested%20in%20American%20Fence%20Wire%20installation" target="_blank" class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all text-sm sm:text-base">Get Quote <span class="material-symbols-outlined" data-icon="arrow_forward"></span></a>
+</div>
+<!-- Service 3 -->
+<div class="group bg-surface-container-lowest p-6 sm:p-10 rounded-2xl transition-all hover:-translate-y-2 border border-transparent hover:border-primary/10">
+<div class="mb-6 sm:mb-8 text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl sm:!text-5xl" data-icon="battery_charging_full"></span>
+</div>
+<h3 class="font-headline text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Inverter System</h3>
+<p class="text-secondary mb-4 sm:mb-6 text-sm sm:text-base">Uninterrupted power supplies to keep your surveillance and critical systems running 24/7.</p>
+<a href="https://wa.me/2348023384523?text=I'm%20interested%20in%20Inverter%20System%20installation" target="_blank" class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all text-sm sm:text-base">Get Quote <span class="material-symbols-outlined" data-icon="arrow_forward"></span></a>
+</div>
+<!-- Service 4 -->
+<div class="group bg-surface-container-lowest p-6 sm:p-10 rounded-2xl transition-all hover:-translate-y-2 border border-transparent hover:border-primary/10">
+<div class="mb-6 sm:mb-8 text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl sm:!text-5xl" data-icon="videocam"></span>
+</div>
+<h3 class="font-headline text-xl sm:text-2xl font-bold mb-3 sm:mb-4">CCTV Installation</h3>
+<p class="text-secondary mb-4 sm:mb-6 text-sm sm:text-base">Ultra-HD AI cameras with night vision, thermal tracking, and remote mobile access.</p>
+<a href="https://wa.me/2348023384523?text=I'm%20interested%20in%20CCTV%20Installation" target="_blank" class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all text-sm sm:text-base">Get Quote <span class="material-symbols-outlined" data-icon="arrow_forward"></span></a>
+</div>
+<!-- Service 5 -->
+<div class="group bg-surface-container-lowest p-6 sm:p-10 rounded-2xl transition-all hover:-translate-y-2 border border-transparent hover:border-primary/10">
+<div class="mb-6 sm:mb-8 text-primary group-hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined text-4xl sm:!text-5xl" data-icon="settings_input_antenna"></span>
+</div>
+<h3 class="font-headline text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Intercom Systems</h3>
+<p class="text-secondary mb-4 sm:mb-6 text-sm sm:text-base">Smart video door entry and internal communication networks for secure access control.</p>
+<a href="https://wa.me/2348023384523?text=I'm%20interested%20in%20Intercom%20Systems%20installation" target="_blank" class="text-primary font-bold flex items-center gap-2 group-hover:gap-4 transition-all text-sm sm:text-base">Get Quote <span class="material-symbols-outlined" data-icon="arrow_forward"></span></a>
+</div>
+<!-- Placeholder / Call to action -->
+<div class="bg-primary p-6 sm:p-10 rounded-2xl flex flex-col justify-center items-center text-center text-white">
+<h3 class="font-headline text-xl sm:text-2xl font-bold mb-3 sm:mb-4">Need a Custom Solution?</h3>
+<p class="opacity-80 mb-6 sm:mb-8 text-sm sm:text-base">We design bespoke security blueprints for unique architectural challenges.</p>
+<button onclick="openQuoteModal()" class="bg-white text-primary px-5 sm:px-6 py-2.5 sm:py-3 rounded-full font-bold text-sm sm:text-base hover:shadow-lg transition-all">Request Consultation</button>
+</div>
+</div>
+</div>
+</section>
+<!-- How It Works -->
+<section class="py-16 sm:py-24 bg-surface" id="process">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="text-center mb-12 sm:mb-16">
+<h2 class="font-headline text-3xl sm:text-4xl font-black tracking-tight mb-4">Our Deployment Process</h2>
+<p class="text-secondary px-4">Precision execution from first contact to lifetime support.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+<!-- Step 1 -->
+<div class="relative text-center">
+<div class="w-12 h-12 sm:w-16 sm:h-16 bg-surface-container-highest rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-xl sm:text-2xl font-black font-headline text-primary">01</div>
+<h4 class="font-headline font-bold mb-2 text-base sm:text-lg">Initial Contact</h4>
+<p class="text-xs sm:text-sm text-secondary px-2">A dedicated advisor assesses your specific security requirements.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative text-center">
+<div class="w-12 h-12 sm:w-16 sm:h-16 bg-surface-container-highest rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-xl sm:text-2xl font-black font-headline text-primary">02</div>
+<h4 class="font-headline font-bold mb-2 text-base sm:text-lg">On-Site Inspection</h4>
+<p class="text-xs sm:text-sm text-secondary px-2">Our engineers conduct a thorough vulnerability audit of your premises.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative text-center">
+<div class="w-12 h-12 sm:w-16 sm:h-16 bg-surface-container-highest rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-xl sm:text-2xl font-black font-headline text-primary">03</div>
+<h4 class="font-headline font-bold mb-2 text-base sm:text-lg">Precision Install</h4>
+<p class="text-xs sm:text-sm text-secondary px-2">Clean, aesthetic, and rigorous installation by certified technicians.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative text-center">
+<div class="w-12 h-12 sm:w-16 sm:h-16 bg-surface-container-highest rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6 text-xl sm:text-2xl font-black font-headline text-primary">04</div>
+<h4 class="font-headline font-bold mb-2 text-base sm:text-lg">Lifetime Support</h4>
+<p class="text-xs sm:text-sm text-secondary px-2">Periodic maintenance and 24/7 technical monitoring as standard.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-16 sm:py-24 bg-surface-container-low overflow-hidden" id="reviews">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<h2 class="font-headline text-3xl sm:text-4xl font-black tracking-tight mb-12 sm:mb-16 text-center">Trusted by Industry Leaders</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+<!-- Review 1 -->
+<div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-zinc-100">
+<div class="flex text-yellow-500 mb-4 text-sm sm:text-base">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;"></span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;"></span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;"></span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;"></span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;"></span>
+</div>
+<p class="italic text-secondary mb-4 sm:mb-6 text-sm sm:text-base">"The precision of their electric fencing installation is unmatched. It looks like part of the house architecture while providing incredible security."</p>
+<div class="flex items-center gap-3 sm:gap-4">
+<div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-zinc-200 flex-shrink-0"></div>
+<div>
+<div class="font-bold text-sm sm:text-base">Oluwaseun Ariyo</div>
+<div class="text-xs text-secondary uppercase tracking-widest font-bold">Estate Manager</div>
+</div>
+</div>
+</div>
+<!-- Review 2 -->
+<div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-zinc-100">
+<div class="flex text-yellow-500 mb-4 text-sm sm:text-base">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;"></span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;"></span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;"></span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;"></span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;"></span>
+</div>
+<p class="italic text-secondary mb-4 sm:mb-6 text-sm sm:text-base">"Their inverter systems have been a game changer for our surveillance. Even during city-wide outages, our cameras never blink."</p>
+<div class="flex items-center gap-3 sm:gap-4">
+<div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-zinc-200 flex-shrink-0"></div>
+<div>
+<div class="font-bold text-sm sm:text-base">Chidi Nwosu</div>
+<div class="text-xs text-secondary uppercase tracking-widest font-bold">Logistics Director</div>
+</div>
+</div>
+</div>
+<!-- Review 3 -->
+<div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-zinc-100">
+<div class="flex text-yellow-500 mb-4 text-sm sm:text-base">
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;"></span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;"></span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;"></span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;"></span>
+<span class="material-symbols-outlined" data-icon="star" style="font-variation-settings: 'FILL' 1;"></span>
+</div>
+<p class="italic text-secondary mb-4 sm:mb-6 text-sm sm:text-base">"Professional, fast, and highly technically skilled. The AI human detection on the CCTV system is incredibly accurate."</p>
+<div class="flex items-center gap-3 sm:gap-4">
+<div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-zinc-200 flex-shrink-0"></div>
+<div>
+<div class="font-bold text-sm sm:text-base">Amina Ibrahim</div>
+<div class="text-xs text-secondary uppercase tracking-widest font-bold">Hotelier</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Security Insights Section -->
+<section class="py-16 sm:py-24 bg-surface" id="insights">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="text-center mb-12 sm:mb-16">
+<h2 class="font-headline text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-4">Security Insights & Tips</h2>
+<p class="text-secondary text-base sm:text-lg max-w-2xl mx-auto px-4">Expert guidance on architecting a safer environment and maintaining your defensive infrastructure.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+<!-- Post 1 -->
+<div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-zinc-100">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="close up of a modern high-definition 4k security camera lens reflecting building lights at dusk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwV6s-QZoqi82_D1R2V37p_XfIZAWl91FvmUJ5WAkHXj7OV1tMVDw-CAY-0v0YL_Yh8YuVtq4eJd16kNHuirrc3DF9_XyyAbxPLMcYzyz33JjZ_F89sxsBF4BnZvL69zCVYc3JARk0poZ2Zsews5vrrWrEtnODSonJOyZAGeWulVXpeqUHCHznuxthXwIDU6C8xNbkwoBFUIYnj-7v8m8skekCKwAQxwvYUXRbkXtoFBAElI0ZyhctNIJbVi6mxJ--LNeEYZe1RfwA"/>
+<div class="absolute top-4 left-4 bg-primary text-white text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full">Maintenance</div>
+</div>
+<div class="p-6 sm:p-8">
+<h3 class="font-headline text-lg sm:text-xl font-bold mb-3 leading-tight group-hover:text-primary transition-colors">5 Tips for Maintaining Your CCTV System</h3>
+<p class="text-secondary text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed">Ensure your eyes on the ground never blink. Regular lens cleaning and software updates are critical for clarity.</p>
+<a href="https://wa.me/2348023384523?text=I'm%20interested%20in%20learning%20more%20about%20CCTV%20maintenance" target="_blank" class="text-primary font-bold text-xs sm:text-sm flex items-center gap-2">Learn More <span class="material-symbols-outlined !text-xs sm:!text-sm" data-icon="arrow_forward"></span></a>
+</div>
+</div>
+<!-- Post 2 -->
+<div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-zinc-100">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="modern minimalist house interior with a wall-mounted smart security control panel showing a map of the house and active sensors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9FFPweSGHFhywgA1hdCLhRUjX0daxTZ9izU_jNwF216X_5j6XGSoltAo7AX_Oz7uqQPzRnsctBHirHuJ0FypK77i2zEdpXGJDKJSwjqT66rBb7XxHQZEIClN7r_vfepM4zr7ZTDVmz5MpZj_8GWdxfWW6xuXHLMJqd2AX16NCd2uX_ME4UgCjGhJ8NMMoiHAoM4Roz7IGTbXZigpL0PK_LCKfDXO1R4yywreck-WFGd13oVsZnMFXYz1Ogox5ygZ4dW7VJFeNzEY7"/>
+<div class="absolute top-4 left-4 bg-primary text-white text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full">Home Security</div>
+</div>
+<div class="p-6 sm:p-8">
+<h3 class="font-headline text-lg sm:text-xl font-bold mb-3 leading-tight group-hover:text-primary transition-colors">The Future of Invisible Home Security</h3>
+<p class="text-secondary text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed">How to integrate military-grade sensors into modern architecture without ruining the aesthetic integrity of your home.</p>
+<a href="https://wa.me/2348023384523?text=I'm%20interested%20in%20invisible%20home%20security%20solutions" target="_blank" class="text-primary font-bold text-xs sm:text-sm flex items-center gap-2">Learn More <span class="material-symbols-outlined !text-xs sm:!text-sm" data-icon="arrow_forward"></span></a>
+</div>
+</div>
+<!-- Post 3 -->
+<div class="group bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all border border-zinc-100">
+<div class="aspect-video relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" alt="professional industrial battery backup system for a server room or security monitoring station with glowing indicators" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVeTIRTuqID7XCABkp9gt7SzRdNteyH7RuDnyNMXjueDIdlWEOh81Ywiak8VJML5Q1iRIONABNHeQJxxff0XEF05N69XvwMWShIe05_UwwzyzY9ZFlfDjuXc_sOzbcWdnObf0_NnaGO8rcwLR3gFWNRQidW2wT7za9zbFY-4kh_GU_h04dPsWGnffWPH-BQmFxVUYeC-8Gc5SrnDeiPxjO4X9HHlBseHe_miTEZTckz3NIOktVza4f_fxm7ZvQ50bRtSoQ2WTulVtH"/>
+<div class="absolute top-4 left-4 bg-primary text-white text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full">Power Solutions</div>
+</div>
+<div class="p-6 sm:p-8">
+<h3 class="font-headline text-lg sm:text-xl font-bold mb-3 leading-tight group-hover:text-primary transition-colors">Why Inverters are the Core of Security</h3>
+<p class="text-secondary text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed">In a blackout, your cameras are useless. Discover why a robust inverter system is the first step in any security plan.</p>
+<a href="https://wa.me/2348023384523?text=I'm%20interested%20in%20Inverter%20systems%20for%20security" target="_blank" class="text-primary font-bold text-xs sm:text-sm flex items-center gap-2">Learn More <span class="material-symbols-outlined !text-xs sm:!text-sm" data-icon="arrow_forward"></span></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-16 sm:py-24 bg-surface-container-low" id="contact">
+<div class="max-w-7xl mx-auto px-4 sm:px-6">
+<div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+<div>
+<h2 class="font-headline text-3xl sm:text-4xl md:text-5xl font-black tracking-tight mb-6 sm:mb-8">Secure Your <span class="text-primary">Future Today.</span></h2>
+<p class="text-base sm:text-lg text-secondary mb-8 sm:mb-12">Contact our architectural security team for a confidential vulnerability assessment of your premises.</p>
+<div class="space-y-6 sm:space-y-8">
+<div class="flex items-start gap-4 sm:gap-6">
+<div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-lg sm:text-xl" data-icon="phone_in_talk"></span>
+</div>
+<div>
+<h4 class="font-headline font-bold mb-1 text-sm sm:text-base">Direct Lines</h4>
+<p class="text-secondary text-sm sm:text-base">08023384523</p>
+<p class="text-secondary text-sm sm:text-base">09060655600</p>
+<p class="text-secondary text-sm sm:text-base">07054721440</p>
+</div>
+</div>
+<div class="flex items-start gap-4 sm:gap-6">
+<div class="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-lg sm:text-xl" data-icon="mail"></span>
+</div>
+<div>
+<h4 class="font-headline font-bold mb-1 text-sm sm:text-base">Electronic Mail</h4>
+<p class="text-secondary text-sm sm:text-base">contact@vigilantarchitect.com</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 sm:p-8 md:p-12 rounded-2xl shadow-xl">
+<form id="contactForm" onsubmit="handleContactSubmit(event)" class="space-y-4 sm:space-y-6">
+<div class="grid sm:grid-cols-2 gap-4 sm:gap-6">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Full Name</label>
+<input id="contactName" class="w-full bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-primary/40 px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base" placeholder="John Doe" type="text" required/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Phone Number</label>
+<input id="contactPhone" class="w-full bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-primary/40 px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base" placeholder="+234..." type="tel" required/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Email Address</label>
+<input id="contactEmail" class="w-full bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-primary/40 px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base" placeholder="john@example.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Project Details</label>
+<textarea id="contactMessage" class="w-full bg-surface-container-high border-none rounded-xl focus:ring-2 focus:ring-primary/40 px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base" placeholder="How can we help you?" rows="4" required></textarea>
+</div>
+<button type="submit" class="w-full primary-gradient text-white py-3 sm:py-4 rounded-xl font-headline font-bold text-base sm:text-lg hover:shadow-lg transition-all">Submit Security Request</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-zinc-100 dark:bg-zinc-900 w-full py-8 sm:py-12 border-t border-zinc-200 dark:border-zinc-800">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:flex lg:justify-between items-start px-4 sm:px-8 max-w-7xl mx-auto gap-8 lg:gap-12">
+<div class="max-w-xs">
+<div class="text-lg sm:text-xl font-bold text-zinc-900 dark:text-white mb-4 sm:mb-6 font-headline tracking-tighter">VIGILANT</div>
+<p class="text-zinc-500 text-xs sm:text-sm leading-relaxed mb-4 sm:mb-6 font-body tracking-wide">
+                    The intersection of architectural precision and uncompromising security infrastructure.
+                </p>
+<a class="inline-flex items-center gap-2 bg-zinc-900 text-white dark:bg-white dark:text-black px-3 sm:px-4 py-2 rounded-lg text-xs font-bold hover:scale-105 transition-transform" href="https://wa.me/2348023384523" target="_blank">
+                    Chat on WhatsApp <span class="material-symbols-outlined !text-xs sm:!text-sm" data-icon="open_in_new"></span>
+</a>
+</div>
+<div class="grid grid-cols-2 gap-8 sm:gap-12">
+<div class="space-y-3 sm:space-y-4">
+<h5 class="text-xs sm:text-sm font-black uppercase tracking-widest text-zinc-900 dark:text-white font-headline">Navigation</h5>
+<ul class="space-y-1.5 sm:space-y-2">
+<li><a class="text-zinc-500 dark:text-zinc-400 hover:text-red-700 underline-offset-4 hover:underline text-xs sm:text-sm tracking-wide" href="#home">Home</a></li>
+<li><a class="text-zinc-500 dark:text-zinc-400 hover:text-red-700 underline-offset-4 hover:underline text-xs sm:text-sm tracking-wide" href="#services">Services</a></li>
+<li><a class="text-zinc-500 dark:text-zinc-400 hover:text-red-700 underline-offset-4 hover:underline text-xs sm:text-sm tracking-wide" href="#process">Process</a></li>
+<li><a class="text-zinc-500 dark:text-zinc-400 hover:text-red-700 underline-offset-4 hover:underline text-xs sm:text-sm tracking-wide" href="#insights">Insights</a></li>
+<li><a class="text-zinc-500 dark:text-zinc-400 hover:text-red-700 underline-offset-4 hover:underline text-xs sm:text-sm tracking-wide" href="#contact">Contact</a></li>
+</ul>
+</div>
+<div class="space-y-3 sm:space-y-4">
+<h5 class="text-xs sm:text-sm font-black uppercase tracking-widest text-zinc-900 dark:text-white font-headline">Legal</h5>
+<ul class="space-y-1.5 sm:space-y-2">
+<li><a class="text-zinc-500 dark:text-zinc-400 hover:text-red-700 underline-offset-4 hover:underline text-xs sm:text-sm tracking-wide" href="#">Privacy Policy</a></li>
+<li><a class="text-zinc-500 dark:text-zinc-400 hover:text-red-700 underline-offset-4 hover:underline text-xs sm:text-sm tracking-wide" href="#">Terms of Service</a></li>
+<li><a class="text-zinc-500 dark:text-zinc-400 hover:text-red-700 underline-offset-4 hover:underline text-xs sm:text-sm tracking-wide" href="#">Security Audit</a></li>
+<li><a class="text-zinc-500 dark:text-zinc-400 hover:text-red-700 underline-offset-4 hover:underline text-xs sm:text-sm tracking-wide" href="#">Careers</a></li>
+</ul>
+</div>
+</div>
+<div class="space-y-3 sm:space-y-4">
+<h5 class="text-xs sm:text-sm font-black uppercase tracking-widest text-zinc-900 dark:text-white font-headline">Contact Details</h5>
+<div class="text-zinc-500 text-xs sm:text-sm space-y-1.5 sm:space-y-2">
+<p>Phone: 08023384523</p>
+<p>Email: security@vigilant.co</p>
+<div class="flex gap-3 sm:gap-4 pt-3 sm:pt-4">
+<a href="https://wa.me/2348023384523" target="_blank" class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors text-lg sm:text-xl" data-icon="share"></a>
+<a href="#" class="material-symbols-outlined hover:text-primary cursor-pointer transition-colors text-lg sm:text-xl" data-icon="public"></a>
+</div>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto px-4 sm:px-8 mt-8 sm:mt-12 pt-6 sm:pt-12 border-t border-zinc-200 dark:border-zinc-800 text-center text-xs text-zinc-500 font-body tracking-wide">
+            © 2024 VIGILANT ARCHITECT. SECURING PREMISES THROUGH PRECISION.
+        </div>
+</footer>
+<!-- Floating WhatsApp Button -->
+<a class="fixed bottom-4 sm:bottom-8 right-4 sm:right-8 z-[100] w-12 h-12 sm:w-16 sm:h-16 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all" href="https://wa.me/2348023384523" target="_blank">
+<svg class="w-6 h-6 sm:w-8 sm:h-8 fill-current" viewbox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.588-5.946 0-6.556 5.332-11.891 11.891-11.891 3.181 0 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.481 8.403 0 6.556-5.332 11.892-11.891 11.892-1.992 0-3.951-.499-5.692-1.447l-6.301 1.665zm6.305-3.665c1.562.927 3.181 1.414 4.85 1.414 5.332 0 9.671-4.339 9.671-9.671 0-2.585-1.006-5.013-2.834-6.841-1.828-1.828-4.253-2.834-6.837-2.834-5.332 0-9.671 4.339-9.671 9.671 0 1.83.513 3.611 1.482 5.153l-1.005 3.67 3.755-.992zm10.744-6.406c-.302-.151-1.787-.881-2.064-.982-.277-.101-.478-.151-.679.151-.202.303-.781.982-.957 1.184-.176.202-.352.227-.654.076-.302-.151-1.274-.469-2.426-1.496-.897-.8-1.501-1.788-1.677-2.09-.176-.302-.019-.465.132-.615.136-.135.302-.352.453-.529.151-.176.201-.302.302-.503.101-.201.05-.378-.025-.53-.075-.151-.679-1.638-.931-2.245-.245-.6-.513-.518-.699-.527-.179-.009-.384-.01-.59-.01-.206 0-.541.077-.824.385-.282.308-1.08 1.057-1.08 2.578 0 1.52 1.106 2.99 1.256 3.193.151.202 2.176 3.322 5.272 4.658.736.317 1.31.507 1.758.649.74.235 1.413.202 1.945.123.593-.088 1.787-.731 2.039-1.436.252-.705.252-1.309.176-1.436-.076-.127-.277-.202-.579-.352z"></path></svg>
+</a>
+<!-- Quote Modal -->
+<div id="quoteModal" class="fixed inset-0 z-[200] hidden">
+<!-- Backdrop -->
+<div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeQuoteModal()"></div>
+<!-- Modal Content -->
+<div class="relative z-10 flex items-center justify-center min-h-screen p-4">
+<div class="bg-white dark:bg-zinc-900 w-full max-w-lg rounded-2xl shadow-2xl p-6 sm:p-8 transform scale-95 opacity-0 transition-all duration-300" id="quoteModalContent">
+<div class="flex justify-between items-center mb-6">
+<h3 class="font-headline text-2xl sm:text-3xl font-black text-zinc-900 dark:text-white">Get a Quote</h3>
+<button onclick="closeQuoteModal()" class="p-2 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full transition-colors">
+<span class="material-symbols-outlined text-zinc-500">close</span>
+</button>
+</div>
+<p class="text-secondary mb-6 text-sm sm:text-base">Fill in your details and we'll get back to you with a customized security solution.</p>
+<form id="quoteForm" onsubmit="handleQuoteSubmit(event)" class="space-y-4 sm:space-y-6">
+<div class="grid sm:grid-cols-2 gap-4">
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Full Name *</label>
+<input id="quoteName" class="w-full bg-surface-container-high border border-zinc-200 dark:border-zinc-700 rounded-xl focus:ring-2 focus:ring-primary/40 focus:border-transparent px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base" placeholder="John Doe" type="text" required/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Phone Number *</label>
+<input id="quotePhone" class="w-full bg-surface-container-high border border-zinc-200 dark:border-zinc-700 rounded-xl focus:ring-2 focus:ring-primary/40 focus:border-transparent px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base" placeholder="08023384523" type="tel" required/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Email Address</label>
+<input id="quoteEmail" class="w-full bg-surface-container-high border border-zinc-200 dark:border-zinc-700 rounded-xl focus:ring-2 focus:ring-primary/40 focus:border-transparent px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base" placeholder="john@example.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Service Type *</label>
+<select id="quoteService" class="w-full bg-surface-container-high border border-zinc-200 dark:border-zinc-700 rounded-xl focus:ring-2 focus:ring-primary/40 focus:border-transparent px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base" required>
+<option value="">Select a service...</option>
+<option value="Electric Fence Wire">Electric Fence Wire</option>
+<option value="American Fence Wire">American Fence Wire</option>
+<option value="Inverter System">Inverter System</option>
+<option value="CCTV Installation">CCTV Installation</option>
+<option value="Intercom Systems">Intercom Systems</option>
+<option value="Custom Package">Custom Package</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Property Type</label>
+<select id="quoteProperty" class="w-full bg-surface-container-high border border-zinc-200 dark:border-zinc-700 rounded-xl focus:ring-2 focus:ring-primary/40 focus:border-transparent px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base">
+<option value="">Select property type...</option>
+<option value="Residential">Residential</option>
+<option value="Commercial">Commercial</option>
+<option value="Industrial">Industrial</option>
+<option value="Estate/Gated Community">Estate/Gated Community</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-bold uppercase tracking-widest text-secondary">Additional Details</label>
+<textarea id="quoteMessage" class="w-full bg-surface-container-high border border-zinc-200 dark:border-zinc-700 rounded-xl focus:ring-2 focus:ring-primary/40 focus:border-transparent px-3 sm:px-4 py-2.5 sm:py-3 text-sm sm:text-base" placeholder="Tell us more about your security needs..." rows="3"></textarea>
+</div>
+<button type="submit" class="w-full primary-gradient text-white py-3 sm:py-4 rounded-xl font-headline font-bold text-base sm:text-lg hover:shadow-lg transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined">send</span>
+                        Send Quote Request
+                    </button>
+</form>
+</div>
+</div>
+</div>
+<script>
+        // Mobile Menu Functions
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('open');
+            if (menu.classList.contains('open')) {
+                icon.textContent = 'close';
+            } else {
+                icon.textContent = 'menu';
+            }
+        }
+        
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.remove('open');
+            icon.textContent = 'menu';
+        }
+        
+        // Quote Modal Functions
+        function openQuoteModal() {
+            const modal = document.getElementById('quoteModal');
+            const content = document.getElementById('quoteModalContent');
+            modal.classList.remove('hidden');
+            document.body.classList.add('modal-open');
+            
+            // Animate in
+            setTimeout(() => {
+                content.classList.remove('scale-95', 'opacity-0');
+                content.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+        
+        function closeQuoteModal() {
+            const modal = document.getElementById('quoteModal');
+            const content = document.getElementById('quoteModalContent');
+            
+            // Animate out
+            content.classList.remove('scale-100', 'opacity-100');
+            content.classList.add('scale-95', 'opacity-0');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.classList.remove('modal-open');
+            }, 300);
+        }
+        
+        // Handle Quote Form Submission
+        function handleQuoteSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('quoteName').value;
+            const phone = document.getElementById('quotePhone').value;
+            const email = document.getElementById('quoteEmail').value;
+            const service = document.getElementById('quoteService').value;
+            const property = document.getElementById('quoteProperty').value;
+            const message = document.getElementById('quoteMessage').value;
+            
+            // Construct WhatsApp message
+            let whatsappMessage = `Hello VIGILANT,%0A%0AI would like to request a quote for security services.%0A%0A*Name:* ${name}%0A*Phone:* ${phone}`;
+            
+            if (email) {
+                whatsappMessage += `%0A*Email:* ${email}`;
+            }
+            
+            whatsappMessage += `%0A*Service:* ${service}`;
+            
+            if (property) {
+                whatsappMessage += `%0A*Property Type:* ${property}`;
+            }
+            
+            if (message) {
+                whatsappMessage += `%0A%0A*Additional Details:*%0A${message}`;
+            }
+            
+            whatsappMessage += `%0A%0APlease contact me with pricing information. Thank you!`;
+            
+            // Open WhatsApp
+            const whatsappUrl = `https://wa.me/2348023384523?text=${whatsappMessage}`;
+            window.open(whatsappUrl, '_blank');
+            
+            // Close modal and reset form
+            closeQuoteModal();
+            document.getElementById('quoteForm').reset();
+        }
+        
+        // Handle Contact Form Submission
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('contactName').value;
+            const phone = document.getElementById('contactPhone').value;
+            const email = document.getElementById('contactEmail').value;
+            const message = document.getElementById('contactMessage').value;
+            
+            // Construct WhatsApp message
+            let whatsappMessage = `Hello VIGILANT,%0A%0AI am interested in your security services.%0A%0A*Name:* ${name}%0A*Phone:* ${phone}`;
+            
+            if (email) {
+                whatsappMessage += `%0A*Email:* ${email}`;
+            }
+            
+            whatsappMessage += `%0A%0A*Project Details:*%0A${message}`;
+            
+            whatsappMessage += `%0A%0APlease get back to me. Thank you!`;
+            
+            // Open WhatsApp
+            const whatsappUrl = `https://wa.me/2348023384523?text=${whatsappMessage}`;
+            window.open(whatsappUrl, '_blank');
+            
+            // Reset form
+            document.getElementById('contactForm').reset();
+        }
+        
+        // Close modal on escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeQuoteModal();
+                closeMobileMenu();
+            }
+        });
+        
+        // Close mobile menu on resize if open
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+</body>
+</html>'''
